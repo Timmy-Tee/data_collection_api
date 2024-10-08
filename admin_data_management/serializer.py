@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import User
 from django.contrib.auth import authenticate
+from user_data_collection . models import CustomerDetail
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
@@ -39,3 +40,9 @@ class UserLoginSerializer(serializers.ModelSerializer):
                raise serializers.ValidationError({'message': "Incorrect email or Password"})
           
           
+
+
+class CustomerDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomerDetail
+        fields = ['id', 'customer_name', 'status']

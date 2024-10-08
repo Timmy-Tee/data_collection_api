@@ -59,3 +59,31 @@
                "volume_dispensed": 4,
                "status": "Not Done"
           }
+
+	ADMIN PRIVILEDGES (Only admins can access this endpoint):
+		GET /auth/admin
+		Response:
+			[
+				{
+					"id": 1,
+					"customer_name": "Emmanuel",
+					"status": "Done"
+				},
+				{
+					"id": 2,
+					"customer_name": "Femi",
+					"status": "Not Done"
+				},
+				{
+					"id": 3,
+					"customer_name": "Daniel",
+					"status": "Done"
+				}
+			]
+
+		PATCH: /auth/admin/<id>
+		Field: status
+		Content-Type: application/json
+		{
+			"status": ""
+		}
