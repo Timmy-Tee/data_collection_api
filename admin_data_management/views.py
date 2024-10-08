@@ -45,7 +45,3 @@ class Admin(viewsets.ModelViewSet):
      queryset = CustomerDetail.objects.all()
      serializer_class = CustomerDetailSerializer
      lookup_field = 'id'
-
-     def update_customer_status(self, request):
-        updated = User.objects.filter(id__in=request.data['id']).update(status='Done')
-        return Response({'message': f'{updated} customers\' status updated to \'Done\''}, status=status.HTTP_200_OK)
